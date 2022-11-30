@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大文件上传</title>
+    <style>
+      .fancy-btn {
+        color: #fff;
+        background: linear-gradient(315deg, #42d392 25%, #647eff);
+        border: none;
+        padding: 5px 10px;
+        margin: 5px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <input type="file" id="upload-select" />
+    </p>
+    <p>
+      <span id="upload-info"></span>
+    </p>
+    <p><progress id="upload-progress" value="0"></progress></p>
+    <p><button id="upload-btn" class="fancy-btn">上传文件</button></p>
+    <script src="./src/app.js" type="module"></script>
+  </body>
+</html>
