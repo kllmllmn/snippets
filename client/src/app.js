@@ -1,5 +1,5 @@
 import { UPLOAD_INFO, CHUNK_SIZE, UPLOAD_URL } from "./config";
-import { createFormData } from "./utils";
+import { createFormData, downloadBlob } from "./utils";
 import axios from "axios";
 import { nanoid } from "nanoid";
 
@@ -43,6 +43,7 @@ import { nanoid } from "nanoid";
       let end =
         start + CHUNK_SIZE >= file.size ? file.size : start + CHUNK_SIZE;
       fileChunk = blobSlice.call(file, start, end);
+      // downloadBlob(fileChunk); // 下载blob
     };
 
     const filename = nanoid() + "~_~" + name; // 整体文件唯一名
