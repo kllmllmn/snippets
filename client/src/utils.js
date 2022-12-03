@@ -24,3 +24,30 @@ export const downloadBlob = (blob) => {
   // 在考虑性能的情况下，在url使用结束后，最好释放此部分内存
   window.URL.revokeObjectURL(url);
 };
+
+// 数组扁平化
+export const flatten = (arr) => {
+  return arr.flat(Infinity); // depth 数组维数-1，默认是1
+};
+
+// 交换一维数组的奇偶位置的值
+export const convertOddEvenValue = (arr) => {
+  if (!Array.isArray(arr)) {
+    throw new Error("需要传入一个数组");
+  }
+  const map = new Map();
+  const len = arr.length;
+  //   数组转Map
+  for (let i = 0; i < len; i += 2) {
+    map.set(arr[i], arr[i + 1]);
+  }
+  //   Map交换键值对
+  const map2 = new Map();
+  for (const [key, val] of [...map.entries()]) {
+    map2.set(val, key);
+  }
+  //   Map对象转数组，数组扁平化 tips: 对象转数组：Object.entries(obj)  Map对象转数组：[...map.entries()]
+  let resArr = [...map2.entries()].flat(1);
+  resArr = resArr.filter((item) => item !== undefined); // 数组去除undefined
+  return resArr;
+};
