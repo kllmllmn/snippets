@@ -14,6 +14,7 @@ dist-ssr
 
 downloadFile
 upload_tmp
+selenium-learn/images
 
 # Editor directories and files
 .vscode/*

@@ -11,7 +11,9 @@ module.exports = {
    *@description: 下载
    *@param: url String，selectors String (通过选择器获取要下载文件的url伪数组)，HOST 图片url不全，需要拼接的字符串
    */
-  downloadFile: (url, selectors, HOST) => {
+  downloadFile: (options) => {
+    const { url, selectors, HOST, method = "get", headers } = options;
+    // console.log(method);
     if (!url) throw new Error("downloadFile need an url");
     let protocol;
     if (url.split(":")[0] === "http") {
@@ -35,7 +37,7 @@ module.exports = {
 
     // 创建请求对象
     let chunks = [];
-    let req = protocol.request(url, (res) => {
+    let req = protocol.request(url, { method, headers }, (res) => {
       res.on("data", (chunk) => {
         chunks.push(chunk);
       });
