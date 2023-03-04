@@ -9,6 +9,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    App: typeof import('./src/components/App.vue')['default']
+    copy: typeof import('./src/components/ECharts/EChartsBar copy.vue')['default']
+    ECharts: typeof import('./src/components/ECharts.vue')['default']
+    EChartsAll: typeof import('./src/components/EChartsAll.vue')['default']
+    EChartsBar: typeof import('./src/components/ECharts/EChartsBar.vue')['default']
+    EChartsLine: typeof import('./src/components/ECharts/EChartsLine.vue')['default']
+    ElTabPane: typeof import('element-plus/es')['ElTabPane']
+    ElTabs: typeof import('element-plus/es')['ElTabs']
     SocketIO: typeof import('./src/components/SocketIO.vue')['default']
   }
 }
