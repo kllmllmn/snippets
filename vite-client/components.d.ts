@@ -15,6 +15,8 @@ declare module '@vue/runtime-core' {
     EChartsAll: typeof import('./src/components/EChartsAll.vue')['default']
     EChartsBar: typeof import('./src/components/ECharts/EChartsBar.vue')['default']
     EChartsLine: typeof import('./src/components/ECharts/EChartsLine.vue')['default']
+    EChartsPie: typeof import('./src/components/ECharts/EChartsPie.vue')['default']
+    EchartsScatter: typeof import('./src/components/ECharts/EchartsScatter.vue')['default']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     SocketIO: typeof import('./src/components/SocketIO.vue')['default']
